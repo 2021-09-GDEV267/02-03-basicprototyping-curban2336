@@ -48,13 +48,13 @@ public class ApplePicker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (GameObject index in basketList)
-        {
-            int i = 0;
-            Vector3 pos = Vector3.zero;
-            pos.y = pos.y + (basketSpacingY * i);
-            index.transform.position = pos;
-            i++;
-        }
+        //foreach (GameObject index in basketList)
+        //{
+            //int i = 0;
+            //Vector3 pos = Vector3.zero;
+            //pos.y = pos.y + (basketSpacingY * i);
+            //index.transform.position = pos;
+            //i++;
+        //}
     }
 }

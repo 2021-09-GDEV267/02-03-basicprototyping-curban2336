@@ -260,7 +260,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 10, y: -6}
-  m_SizeDelta: {x: 256, y: 32}
+  m_SizeDelta: {x: 270, y: 32}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &776809567
 MonoBehaviour:
@@ -677,6 +677,8 @@ MonoBehaviour:
   leftAndRightEdge: 25
   chanceToChangeDirection: 0.02
   secondsBetweenAppleDrops: 1
+  scoreGT: {fileID: 2119773617}
+  scoreTest: 0
 --- !u!1001 &7772500991579403174
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -27,7 +27,7 @@ public class Basket : MonoBehaviour
 
         Vector3 pos = this.transform.position;
         pos.x = mousePos3D.x;
-        pos.y = mousePos3D.y;
+        //pos.y = mousePos3D.y;
         this.transform.position = pos;
     }
 

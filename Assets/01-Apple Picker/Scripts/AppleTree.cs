@@ -1,19 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class AppleTree : MonoBehaviour
 {
     [Header("Set in Inspector")]
     public GameObject applePrefab;
-    public float speed = 1f;
+    public float speed = 10f;
     public float leftAndRightEdge = 10f;
     public float chanceToChangeDirection = 0.1f;
     public float secondsBetweenAppleDrops = 1f;
+    public Text scoreGT;
+    public int scoreTest;
 
     // Start is called before the first frame update
     void Start()
     {
+        GameObject scoreGO = GameObject.Find("ScoreCounter");
+        scoreGT = scoreGO.GetComponent<Text>();
+        scoreTest = int.Parse(scoreGT.text);
         Invoke("DropApple", 2f);
     }
 
@@ -21,7 +28,27 @@ public class AppleTree : MonoBehaviour
     {
         GameObject apple = Instantiate<GameObject>(applePrefab);
         apple.transform.position = transform.position;
+        if((scoreTest%1500)+1 == 1)
+        {
+            Invoke("WaveMaker", 4f);
+        }
         Invoke("DropApple", secondsBetweenAppleDrops);
+    }
+
+    void WaveMaker()
+    {
+        if (Mathf.Abs(speed)/speed == -1)
+        {
+            speed -= 2;
+        }
+        else
+        {
+            speed += 2;
+        }
+        if (speed % 20 == 0 && secondsBetweenAppleDrops > 0.25)
+        {
+            secondsBetweenAppleDrops = secondsBetweenAppleDrops / 2;
+        }
     }
 
     // Update is called once per frame
@@ -39,7 +66,7 @@ public class AppleTree : MonoBehaviour
         {
             speed = -Mathf.Abs(speed);
         }
-        
+
     }
 
     void FixedUpdate()
@@ -48,5 +75,6 @@ public class AppleTree : MonoBehaviour
         {
             speed *= -1;
         }
+        scoreTest = int.Parse(scoreGT.text);
     }
 }
