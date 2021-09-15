@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class AppleTree : MonoBehaviour
 {
@@ -14,6 +13,7 @@ public class AppleTree : MonoBehaviour
     public float secondsBetweenAppleDrops = 1f;
     public Text scoreGT;
     public int scoreTest;
+    public bool wavePause = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,17 +22,30 @@ public class AppleTree : MonoBehaviour
         scoreGT = scoreGO.GetComponent<Text>();
         scoreTest = int.Parse(scoreGT.text);
         Invoke("DropApple", 2f);
+        
     }
 
     void DropApple()
     {
         GameObject apple = Instantiate<GameObject>(applePrefab);
         apple.transform.position = transform.position;
-        if((scoreTest%1500)+1 == 1)
+        if ((scoreTest % 1500) == 0 && scoreTest != 0)
         {
-            Invoke("WaveMaker", 4f);
+            Invoke("WaveMaker", 0f);
+            wavePause = true;
         }
-        Invoke("DropApple", secondsBetweenAppleDrops);
+        else
+        {
+            Invoke("DropApple", secondsBetweenAppleDrops);
+        }
+        if (wavePause == true)
+        {
+            float secondCounter = secondsBetweenAppleDrops;
+            secondsBetweenAppleDrops = 4;
+            Invoke("DropApple", 4f);
+            secondsBetweenAppleDrops = secondCounter;
+            wavePause = false;
+        }
     }
 
     void WaveMaker()
