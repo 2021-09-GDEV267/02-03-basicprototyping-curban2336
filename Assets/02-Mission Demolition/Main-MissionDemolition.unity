@@ -285,13 +285,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 792234105}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 792234111}
+        m_TargetAssemblyTypeName: MissionDemolition, Assembly-CSharp
+        m_MethodName: SwitchView
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -525,6 +525,7 @@ GameObject:
   - component: {fileID: 792234106}
   - component: {fileID: 792234109}
   - component: {fileID: 792234110}
+  - component: {fileID: 792234111}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -631,6 +632,34 @@ MonoBehaviour:
   cloudScaleMin: 1
   cloudScaleMax: 3
   cloudSpeedMult: 0.5
+--- !u!114 &792234111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792234105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 161f7030802d2aa44bd8ac74c5ca5769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uitLevel: {fileID: 2099910039}
+  uitShots: {fileID: 177211771}
+  uitButton: {fileID: 997693916}
+  castlePos: {x: 50, y: -9.5, z: 0}
+  castles:
+  - {fileID: 1999336960400154233, guid: 4676f220f6e2a0d45a0127e173700ad4, type: 3}
+  - {fileID: 1999336960400154233, guid: 62016d396c54f7e47a581f9459dedcf9, type: 3}
+  - {fileID: 1999336960400154233, guid: 105737001299712489686e6792e72b69, type: 3}
+  - {fileID: 1999336960400154233, guid: 2017b2b7e17f9d24d818bd4201f640ec, type: 3}
+  - {fileID: 1999336960400154233, guid: 0a64f1881186a524f918410beac27c59, type: 3}
+  level: 0
+  levelMax: 0
+  shotsTaken: 0
+  castle: {fileID: 0}
+  mode: 0
+  showing: Show Slingshot
 --- !u!1 &858472503
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,6 +1111,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1310840052}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1408747578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1408747579}
+  m_Layer: 0
+  m_Name: ViewBoth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1408747579
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408747578}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 25, y: 25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1484418008
 GameObject:
   m_ObjectHideFlags: 0
