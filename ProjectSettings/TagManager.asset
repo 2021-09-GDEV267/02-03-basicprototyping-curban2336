@@ -7,6 +7,9 @@ TagManager:
   - Apple
   - Projectile
   - Barrel
+  - Turret
+  - Enemy
+  - Gun
   layers:
   - Default
   - TransparentFX
