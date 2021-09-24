@@ -307,12 +307,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5530618225927612218, guid: 30298640781cb3a4f9d771b149146b38, type: 3}
       propertyPath: m_Name
-      value: PlayerGun(3)
+      value: SouthGun
       objectReference: {fileID: 0}
     - target: {fileID: 8378715684543202397, guid: 30298640781cb3a4f9d771b149146b38, type: 3}
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8442747547949197412, guid: 30298640781cb3a4f9d771b149146b38, type: 3}
+      propertyPath: directional
+      value: South
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442747547949197412, guid: 30298640781cb3a4f9d771b149146b38, type: 3}
+      propertyPath: velocityMult
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442747547949197412, guid: 30298640781cb3a4f9d771b149146b38, type: 3}
+      propertyPath: prefabProjectile
+      value: 
+      objectReference: {fileID: 526991864880261089, guid: 3bba0719690a162449478b566582164c, type: 3}
     - target: {fileID: 9130116953984016405, guid: 30298640781cb3a4f9d771b149146b38, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -477,12 +489,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5530618225927612218, guid: 30298640781cb3a4f9d771b149146b38, type: 3}
       propertyPath: m_Name
-      value: PlayerGun(4)
+      value: WestGun
       objectReference: {fileID: 0}
     - target: {fileID: 8378715684543202397, guid: 30298640781cb3a4f9d771b149146b38, type: 3}
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8442747547949197412, guid: 30298640781cb3a4f9d771b149146b38, type: 3}
+      propertyPath: directional
+      value: West
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442747547949197412, guid: 30298640781cb3a4f9d771b149146b38, type: 3}
+      propertyPath: velocityMult
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442747547949197412, guid: 30298640781cb3a4f9d771b149146b38, type: 3}
+      propertyPath: prefabProjectile
+      value: 
+      objectReference: {fileID: 526991864880261089, guid: 3bba0719690a162449478b566582164c, type: 3}
     - target: {fileID: 9130116953984016405, guid: 30298640781cb3a4f9d771b149146b38, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -702,12 +726,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5530618225927612218, guid: 30298640781cb3a4f9d771b149146b38, type: 3}
       propertyPath: m_Name
-      value: PlayerGun(2)
+      value: EastGun
       objectReference: {fileID: 0}
     - target: {fileID: 8378715684543202397, guid: 30298640781cb3a4f9d771b149146b38, type: 3}
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8442747547949197412, guid: 30298640781cb3a4f9d771b149146b38, type: 3}
+      propertyPath: directional
+      value: East
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442747547949197412, guid: 30298640781cb3a4f9d771b149146b38, type: 3}
+      propertyPath: velocityMult
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442747547949197412, guid: 30298640781cb3a4f9d771b149146b38, type: 3}
+      propertyPath: prefabProjectile
+      value: 
+      objectReference: {fileID: 526991864880261089, guid: 3bba0719690a162449478b566582164c, type: 3}
     - target: {fileID: 9130116953984016405, guid: 30298640781cb3a4f9d771b149146b38, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -775,12 +811,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5530618225927612218, guid: 30298640781cb3a4f9d771b149146b38, type: 3}
       propertyPath: m_Name
-      value: PlayerGun(1)
+      value: NorthGun
       objectReference: {fileID: 0}
     - target: {fileID: 8378715684543202397, guid: 30298640781cb3a4f9d771b149146b38, type: 3}
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8442747547949197412, guid: 30298640781cb3a4f9d771b149146b38, type: 3}
+      propertyPath: directional
+      value: North
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442747547949197412, guid: 30298640781cb3a4f9d771b149146b38, type: 3}
+      propertyPath: velocityMult
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8442747547949197412, guid: 30298640781cb3a4f9d771b149146b38, type: 3}
+      propertyPath: prefabProjectile
+      value: 
+      objectReference: {fileID: 526991864880261089, guid: 3bba0719690a162449478b566582164c, type: 3}
     - target: {fileID: 9130116953984016405, guid: 30298640781cb3a4f9d771b149146b38, type: 3}
       propertyPath: m_RootOrder
       value: 4
