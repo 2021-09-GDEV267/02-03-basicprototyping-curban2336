@@ -29,13 +29,6 @@ public class PlayerController : MonoBehaviour
         player.SetActive(true);
     }
 
-    void OnMove(InputValue movementValue)
-    {
-        Vector2 movementVector = movementValue.Get<Vector2>();
-        movementX = movementVector.x;
-        movementY = movementVector.y;
-    }
-
     void SetHealthText()
     {
         healthText.text = "Health: " + health.ToString();
@@ -47,26 +40,32 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    // Update is called once per frame
+    void Update()
     {
-        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
-        rb.AddForce(movement * speed);
+        Vector3 mousePos2D = Input.mousePosition;
+
+        mousePos2D.z = -Camera.main.transform.position.z;
+
+        Vector3 mousePos3D = Camera.main.ScreenToWorldPoint(mousePos2D);
+
+        Vector3 pos = this.transform.position;
+        pos.x = mousePos3D.x;
+        //pos.y = mousePos3D.y;
+        this.transform.position = pos;
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision coll)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        GameObject collidedWith = coll.gameObject;
+        if (collidedWith.tag == "Projectile")
         {
+            Destroy(collidedWith);
+
             health = health - 1;
 
             SetHealthText();
-        }
 
-        if (other.gameObject.CompareTag("Turret"))
-        {
-            health = health - 1;
-
-            SetHealthText();
         }
     }
 }

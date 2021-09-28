@@ -1,19 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.InputSystem;
 using UnityEngine;
 
 public class Gunshot : MonoBehaviour
 {
     public GameObject prefabProjectile;
-    public float velocityMult = 10f;
-    public string directional;
+    public float velocityMult = 40f;
     public GameObject projectile;
     private Rigidbody projectileRigidbody;
-
-    private float movementX;
-    private float movementY;
-    private float movementZ;
 
     // Start is called before the first frame update
     void Start()
@@ -21,103 +15,20 @@ public class Gunshot : MonoBehaviour
 
     }
 
-    void MakeBullet()
+    void OnMouseDown()
     {
-        if (directional == "North" || directional == "north")
-        {
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                projectile = Instantiate(prefabProjectile) as GameObject;
-                projectile.transform.position = this.transform.position;
-                projectileRigidbody = projectile.GetComponent<Rigidbody>();
-            }
-        }
-        else if (directional == "South" || directional == "south")
-        {
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                projectile = Instantiate(prefabProjectile) as GameObject;
-                projectile.transform.position = this.transform.position;
-                projectileRigidbody = projectile.GetComponent<Rigidbody>();
-            }
-        }
-        else if (directional == "East" || directional == "east")
-        {
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                projectile = Instantiate(prefabProjectile) as GameObject;
-                projectile.transform.position = this.transform.position;
-                projectileRigidbody = projectile.GetComponent<Rigidbody>();
-            }
-        }
-        else if (directional == "West" || directional == "west")
-        {
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                projectile = Instantiate(prefabProjectile) as GameObject;
-                projectile.transform.position = this.transform.position;
-                projectileRigidbody = projectile.GetComponent<Rigidbody>();
-            }
-        }
+        projectile = Instantiate(prefabProjectile) as GameObject;
+        projectile.transform.position = (this.transform.position)*0.9f;
+        projectileRigidbody = projectile.GetComponent<Rigidbody>();
+        projectileRigidbody.velocity = new Vector3(0,10,0);
+        projectile = null;
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        if (directional == "North" || directional == "north")
+        if (Input.GetMouseButtonDown(0))
         {
-            if (Input.GetKeyUp(KeyCode.W))
-            {
-                projectileRigidbody.velocity = new Vector3(0, 0, 45) * Time.deltaTime;
-                projectile = null;
-            }
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                projectile = Instantiate(prefabProjectile) as GameObject;
-                projectile.transform.position = this.transform.position;
-                projectileRigidbody = projectile.GetComponent<Rigidbody>();
-            }
-        }
-        else if (directional == "South" || directional == "south")
-        {
-            if (Input.GetKeyUp(KeyCode.S))
-            {
-                projectileRigidbody.velocity = new Vector3(0, 0, -45) * Time.deltaTime;
-                projectile = null;
-            }
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                projectile = Instantiate(prefabProjectile) as GameObject;
-                projectile.transform.position = this.transform.position;
-                projectileRigidbody = projectile.GetComponent<Rigidbody>();
-            }
-        }
-        else if (directional == "East" || directional == "east")
-        {
-            if (Input.GetKeyUp(KeyCode.D))
-            {
-                projectileRigidbody.velocity = new Vector3(45, 0, 0) * Time.deltaTime;
-                projectile = null;
-            }
-            if (Input.GetKeyDown(KeyCode.D))
-            {
-                projectile = Instantiate(prefabProjectile) as GameObject;
-                projectile.transform.position = this.transform.position;
-                projectileRigidbody = projectile.GetComponent<Rigidbody>();
-            }
-        }
-        else if (directional == "West" || directional == "west")
-        {
-            if (Input.GetKeyUp(KeyCode.A))
-            {
-                projectileRigidbody.velocity = new Vector3(-45, 0, 0) * Time.deltaTime;
-                projectile = null;
-            }
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                projectile = Instantiate(prefabProjectile) as GameObject;
-                projectile.transform.position = this.transform.position;
-                projectileRigidbody = projectile.GetComponent<Rigidbody>();
-            }
+            OnMouseDown();
         }
     }
 }
