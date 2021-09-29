@@ -665,6 +665,7 @@ MonoBehaviour:
   chanceToChangeDirection: 0.025
   secondsBetweenBombDrops: 1
   bossHealthText: {fileID: 964717093}
+  healthText: {fileID: 1087651270}
   health: 40
   increment: 0
 --- !u!54 &1096822058

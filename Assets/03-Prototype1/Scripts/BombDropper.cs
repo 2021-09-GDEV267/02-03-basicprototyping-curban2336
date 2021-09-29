@@ -14,6 +14,7 @@ public class BombDropper : MonoBehaviour
     public float chanceToChangeDirection = 0.1f;
     public float secondsBetweenBombDrops = 1f;
     public TextMeshProUGUI bossHealthText;
+    public TextMeshProUGUI healthText;
     public int health;
     public int increment;
     private bool wavePause;
@@ -56,8 +57,8 @@ public class BombDropper : MonoBehaviour
         {
             float secondCounter = secondsBetweenBombDrops;
             secondsBetweenBombDrops = 4;
-            Invoke("DropBomb", 4f);
             Invoke("newBoss", 4f);
+            Invoke("DropBomb", 4f);
             secondsBetweenBombDrops = secondCounter;
             wavePause = false;
         }
@@ -65,9 +66,22 @@ public class BombDropper : MonoBehaviour
 
     void newBoss()
     {
+        GameObject[] bombArray = GameObject.FindGameObjectsWithTag("Bomb");
+        foreach (GameObject tGO in bombArray)
+        {
+            Destroy(tGO);
+        }
         increment += 10;
         health = 40 + increment;
+        SetHealthText();
+        PlayerController.health = 5;
+        SetPlayerHealthText();
         boss.SetActive(true);
+    }
+
+    void SetPlayerHealthText()
+    {
+        healthText.text = "Player Health: " + PlayerController.health.ToString();
     }
 
     void WaveMaker()
@@ -123,7 +137,6 @@ public class BombDropper : MonoBehaviour
         {
             speed *= -1;
         }
-        SetHealthText();
     }
 }
 
