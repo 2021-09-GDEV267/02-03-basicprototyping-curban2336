@@ -14,8 +14,8 @@ public class BombDropper : MonoBehaviour
     public float chanceToChangeDirection = 0.1f;
     public float secondsBetweenBombDrops = 1f;
     public TextMeshProUGUI bossHealthText;
-    public GameObject winTextObject;
     public int health;
+    public int increment;
     private bool wavePause;
 
 
@@ -23,11 +23,10 @@ public class BombDropper : MonoBehaviour
     void Start()
     {
         health = 40;
+        increment = 0;
         SetHealthText();
         Invoke("DropBomb", 2f);
         boss.SetActive(true);
-
-        winTextObject.SetActive(false);
     }
 
     void SetHealthText()
@@ -36,7 +35,6 @@ public class BombDropper : MonoBehaviour
 
         if (health == 0)
         {
-            winTextObject.SetActive(true);
             boss.SetActive(false);
         }
     }
@@ -59,26 +57,34 @@ public class BombDropper : MonoBehaviour
             float secondCounter = secondsBetweenBombDrops;
             secondsBetweenBombDrops = 4;
             Invoke("DropBomb", 4f);
-            boss.SetActive(true);
+            Invoke("newBoss", 4f);
             secondsBetweenBombDrops = secondCounter;
             wavePause = false;
         }
+    }
+
+    void newBoss()
+    {
+        increment += 10;
+        health = 40 + increment;
+        boss.SetActive(true);
     }
 
     void WaveMaker()
     {
         if (Mathf.Abs(speed) / speed == -1)
         {
-            speed -= 2;
+            speed -= 5;
         }
         else
         {
-            speed += 2;
+            speed += 5;
         }
-        if (speed % 20 == 0 && secondsBetweenBombDrops > 0.25)
+        if (secondsBetweenBombDrops > 0.25)
         {
             secondsBetweenBombDrops = secondsBetweenBombDrops / 2;
         }
+        Bomb.tester += 1;
     }
 
     void OnTriggerEnter(Collider other)

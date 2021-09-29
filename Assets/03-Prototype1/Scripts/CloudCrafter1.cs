@@ -7,8 +7,8 @@ public class CloudCrafter1 : MonoBehaviour
 	[Header("Set in Inspector")]
 	public int 	numClouds = 40; // the number of clouds to make
 	public GameObject 	cloudPrefab; // the prefab for the clouds
-	public Vector3 	cloudPosMin = new Vector3(-50, -5, 10);
-	public Vector3 	cloudPosMax = new Vector3(150, 100, 10);
+	public Vector3 	cloudPosMin = new Vector3(-50, -5, 30);
+	public Vector3 	cloudPosMax = new Vector3(150, 100, 40);
 	public float 	cloudScaleMin = 1; // min scale for the clouds
 	public float 	cloudScaleMax = 3; // max scale for the clouds
 	public float 	cloudSpeedMult = 0.5f; // adjusts speed of clouds
@@ -32,6 +32,7 @@ public class CloudCrafter1 : MonoBehaviour
 			Vector3 cPos = Vector3.zero;
 			cPos.x = Random.Range(cloudPosMin.x, cloudPosMax.x);
 			cPos.y = Random.Range(cloudPosMin.y, cloudPosMax.y);
+			cPos.z = Random.Range(cloudPosMin.z, cloudPosMax.z);
 
 			// scale cloud
 			float scaleU = Random.value;
@@ -40,8 +41,6 @@ public class CloudCrafter1 : MonoBehaviour
 			// smaller clouds (with smaller scaleU) should be near the ground
 			cPos.y = Mathf.Lerp(cloudPosMin.y, cPos.y, scaleU);
 
-			// smaller clouds should be farther away
-			cPos.z = 100 -90*scaleU;
 
 			// apply these transforms to the cloud 
 			cloud.transform.position = cPos;
