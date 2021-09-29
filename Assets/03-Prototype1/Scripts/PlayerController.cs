@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 0;
     public TextMeshProUGUI healthText;
-    public GameObject winTextObject;
     public GameObject loseTextObject;
     public GameObject player;
 
@@ -24,19 +23,32 @@ public class PlayerController : MonoBehaviour
         health = 5;
 
         SetHealthText();
-        winTextObject.SetActive(false);
         loseTextObject.SetActive(false);
         player.SetActive(true);
     }
 
     void SetHealthText()
     {
-        healthText.text = "Health: " + health.ToString();
+        healthText.text = "Player Health: " + health.ToString();
 
         if (health == 0)
         {
             loseTextObject.SetActive(true);
             player.SetActive(false);
+        }
+    }
+
+    void OnCollisionEnter(Collision coll)
+    {
+        GameObject collidedWith = coll.gameObject;
+        if (collidedWith.tag == "Bomb")
+        {
+            Destroy(collidedWith);
+
+            health = health - 1;
+
+            SetHealthText();
+
         }
     }
 
@@ -53,19 +65,5 @@ public class PlayerController : MonoBehaviour
         pos.x = mousePos3D.x;
         //pos.y = mousePos3D.y;
         this.transform.position = pos;
-    }
-
-    void OnCollisionEnter(Collision coll)
-    {
-        GameObject collidedWith = coll.gameObject;
-        if (collidedWith.tag == "Projectile")
-        {
-            Destroy(collidedWith);
-
-            health = health - 1;
-
-            SetHealthText();
-
-        }
     }
 }

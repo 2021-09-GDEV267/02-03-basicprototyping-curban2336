@@ -18,7 +18,7 @@ public class Gunshot : MonoBehaviour
     void OnMouseDown()
     {
         projectile = Instantiate(prefabProjectile) as GameObject;
-        projectile.transform.position = (this.transform.position)*0.9f;
+        projectile.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z);
         projectileRigidbody = projectile.GetComponent<Rigidbody>();
         projectileRigidbody.velocity = new Vector3(0,10,0);
         projectile = null;

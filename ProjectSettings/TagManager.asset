@@ -10,6 +10,7 @@ TagManager:
   - Turret
   - Enemy
   - Gun
+  - Bomb
   layers:
   - Default
   - TransparentFX
@@ -17,13 +18,13 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Enemy
+  - Bullet
   - AppleTree
   - Apple
   - Basket
-  - 
-  - 
+  - Player
+  - Bomb
   - 
   - 
   - 
