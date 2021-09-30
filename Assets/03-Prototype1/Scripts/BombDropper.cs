@@ -94,7 +94,7 @@ public class BombDropper : MonoBehaviour
         {
             speed += 5;
         }
-        if (secondsBetweenBombDrops > 0.25)
+        if (secondsBetweenBombDrops > 0.125)
         {
             secondsBetweenBombDrops = secondsBetweenBombDrops / 2;
         }
