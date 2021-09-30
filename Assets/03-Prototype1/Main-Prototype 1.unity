@@ -363,15 +363,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 792234105}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc159364c730b4c4ab52034e1d2ea6dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 905a8caa72cf728439809b1fd7e7d3d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   numClouds: 40
   cloudPrefab: {fileID: 3093270812349723206, guid: 2a1c54cc02fbe064da03be994cfe9b54, type: 3}
-  cloudPosMin: {x: -50, y: -5, z: 90}
-  cloudPosMax: {x: 150, y: 100, z: 100}
+  cloudPosMin: {x: -50, y: -5, z: 30}
+  cloudPosMax: {x: 150, y: 100, z: 40}
   cloudScaleMin: 1
-  cloudScaleMax: 2
+  cloudScaleMax: 3
   cloudSpeedMult: 0.5
 --- !u!1 &964717090
 GameObject:
@@ -793,7 +793,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259522008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
